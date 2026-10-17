@@ -1,6 +1,6 @@
 # Git 使用教程
 
-本教程面向初学者，覆盖日常使用 GitHub 项目所需的全部 Git 操作。
+本教程面向初学者，覆盖日常使用 GitHub 项目所需的全部 Git 操作，附实际操作截图。
 
 ## 一、首次配置（只需要做一次）
 
@@ -18,7 +18,9 @@ git config --global --list
 
 ## 二、日常更新流程（最常用）
 
-修改文件后，按以下三步推送到 GitHub：
+修改文件后，按以下四步推送到 GitHub：
+
+![Git 日常工作流](images/06-git-workflow.png)
 
 ```powershell
 # 1. 查看改了哪些文件
@@ -34,7 +36,59 @@ git commit -m "修复了某某问题"
 git push
 ```
 
-## 三、常用命令速查
+### 第1步：git status — 查看当前状态
+
+![git status 示例](images/01-git-status.png)
+
+红色表示有修改但未添加，绿色表示已添加待提交。
+
+### 第2步：git add -A — 添加所有修改
+
+```powershell
+git add -A          # 添加所有修改
+git add README.md   # 只添加指定文件
+```
+
+### 第3步：git commit — 提交修改
+
+![git commit 示例](images/03-git-commit.png)
+
+提交信息写清楚做了什么，方便以后回溯。
+
+### 第4步：git push — 推送到 GitHub
+
+![git push 示例](images/04-git-push.png)
+
+看到 `main -> main` 就说明推送成功了。
+
+## 三、查看提交历史
+
+```powershell
+git log --oneline
+```
+
+![git log 示例](images/02-git-log.png)
+
+每行是一次提交，前面的 7 位字符是提交哈希（用于回退等操作）。
+
+## 四、拉取远程更新
+
+如果 GitHub 上有新的提交（比如别人贡献了代码），拉取到本地：
+
+```powershell
+git pull
+```
+
+![git pull 示例](images/05-git-pull.png)
+
+如果本地有未提交的修改，先提交或暂存：
+```powershell
+git stash        # 临时保存修改
+git pull         # 拉取更新
+git stash pop    # 恢复修改
+```
+
+## 五、常用命令速查
 
 | 命令 | 作用 | 示例 |
 |------|------|------|
@@ -48,29 +102,14 @@ git push
 | `git diff` | 查看具体修改内容 | `git diff` |
 | `git clone 地址` | 克隆远程仓库 | `git clone https://github.com/xxx/xxx.git` |
 
-## 四、克隆本项目
+## 六、克隆本项目
 
 ```powershell
 git clone https://github.com/hudeonbush/workbuddy-dual-instance-fix.git
 cd workbuddy-dual-instance-fix
 ```
 
-## 五、从别人的更新中同步
-
-如果 GitHub 上有新的提交（比如别人贡献了代码），拉取到本地：
-
-```powershell
-git pull
-```
-
-如果本地有未提交的修改，先提交或暂存：
-```powershell
-git stash        # 临时保存修改
-git pull         # 拉取更新
-git stash pop    # 恢复修改
-```
-
-## 六、代理设置（国内访问 GitHub 可能需要）
+## 七、代理设置（国内访问 GitHub 可能需要）
 
 如果推送/拉取超时，设置代理：
 
@@ -87,7 +126,7 @@ git config --local --unset https.proxy
 git config --local --get http.proxy
 ```
 
-## 七、常见问题
+## 八、常见问题
 
 ### Q: push 时提示 "Everything up-to-date"
 A: 说明没有新的提交需要推送。先 `git status` 确认是否有修改，有修改需要先 `git add` + `git commit`。
@@ -115,7 +154,7 @@ git log --oneline          # 查看提交哈希
 git reset --hard 哈希值    # 回退到指定版本（危险，会丢失之后的修改）
 ```
 
-## 八、推荐工作流
+## 九、推荐工作流
 
 ```
 修改文件 → git status 确认 → git add -A → git commit -m "描述" → git push
