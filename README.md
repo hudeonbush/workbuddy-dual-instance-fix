@@ -116,8 +116,8 @@ GET https://copilot.tencent.com/v2/update?platform=workbuddy-win32-x64-user&vers
 
 遇到问题或有新发现？欢迎通过以下渠道反馈：
 
-- **提交 Issue**：[GitHub Issues](https://github.com/your-username/workbuddy-dual-instance-fix/issues) — 报告 bug、请求新功能
-- **参与讨论**：[GitHub Discussions](https://github.com/your-username/workbuddy-dual-instance-fix/discussions) — 分享你的修复经验、提问交流
+- **提交 Issue**：[GitHub Issues](https://github.com/hudeonbush/workbuddy-dual-instance-fix/issues) — 报告 bug、请求新功能
+- **参与讨论**：[GitHub Discussions](https://github.com/hudeonbush/workbuddy-dual-instance-fix/discussions) — 分享你的修复经验、提问交流
 - **查看文档**：[docs/](docs/) — 完整的根因分析和修复步骤
 
 提交 Issue 时请附上 `scripts\diagnose.ps1` 的输出，方便快速定位问题。
