@@ -77,7 +77,8 @@ workbuddy-dual-instance-fix/
 │   ├── 02-root-cause.md      # 根因深度分析
 │   ├── 03-fix-guide.md       # 修复步骤详解
 │   ├── 04-verification.md    # 验证方法与证据
-│   └── 05-faq.md             # 常见问题
+│   ├── 05-faq.md             # 常见问题
+│   └── 06-git-usage.md       # Git 使用教程
 ├── scripts/
 │   ├── diagnose.ps1              # 环境诊断（进程/目录/注册表/日志）
 │   ├── fetch-update.ps1          # 调用官方更新 API 获取安装包
