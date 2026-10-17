@@ -1,0 +1,61 @@
+{
+  "name": "workbuddy-dual-instance-fix",
+  "version": "1.0.0",
+  "description": "Fix WorkBuddy (国内版) and WorkBuddy AI (国际版) cannot run simultaneously - root cause analysis, deployment scripts, and verification tools",
+  "author": "hudeonbush",
+  "license": "MIT",
+  "platform": "windows",
+  "language": "zh-CN",
+  "entry_points": {
+    "doubao_work": "SKILL.md",
+    "generic_agent": "AGENTS.md",
+    "human_readme": "README.md"
+  },
+  "scripts": {
+    "diagnose": {
+      "file": "scripts/diagnose.ps1",
+      "description": "诊断当前 WorkBuddy 双持环境状态（只读）",
+      "args": [],
+      "risk": "none"
+    },
+    "fetch_update": {
+      "file": "scripts/fetch-update.ps1",
+      "description": "查询官方更新 API，获取国内版最新安装包 URL 和 SHA256",
+      "args": ["-Download", "-CurrentVersion", "-UserId"],
+      "risk": "none"
+    },
+    "deploy": {
+      "file": "scripts/deploy-from-package.ps1",
+      "description": "从安装包部署到指定目录（tar 解包 + robocopy）",
+      "args": ["-PackagePath", "-TargetDir", "-ExpectedSha256", "-SkipStop"],
+      "risk": "medium"
+    },
+    "verify": {
+      "file": "scripts/verify-dual-run.ps1",
+      "description": "验证双开状态（进程、版本、渲染、数据隔离）",
+      "args": ["-AutoStart", "-WaitSeconds"],
+      "risk": "none"
+    }
+  },
+  "compatibility": [
+    "doubao-work",
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "openai-codex",
+    "any-agent-with-powershell"
+  ],
+  "keywords": [
+    "workbuddy",
+    "codebuddy",
+    "tencent",
+    "dual-instance",
+    "windows",
+    "powershell",
+    "electron",
+    "fix",
+    "white-screen",
+    "react-error-31"
+  ],
+  "repository": "https://github.com/hudeonbush/workbuddy-dual-instance-fix"
+}

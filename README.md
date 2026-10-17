@@ -41,10 +41,34 @@
 .\scripts\verify-dual-run.ps1
 ```
 
+## 多 Agent 兼容
+
+本项目同时提供多种技能入口格式，可被主流 AI Agent 直接加载使用：
+
+| 入口文件 | 兼容 Agent | 说明 |
+|---------|-----------|------|
+| `SKILL.md` | 豆包工作 | 豆包工作原生 Skill 格式，含 frontmatter 触发条件 |
+| `AGENTS.md` | Claude Code、Cursor、GitHub Copilot、OpenAI Codex | 通用 Agent 技能描述格式 |
+| `skill.json` | 任意支持结构化清单的 Agent | 机器可读的技能元数据和脚本清单 |
+| `scripts/*.ps1` | 任何能调用 PowerShell 的 Agent/终端 | 4 个可独立运行的自动化脚本 |
+
+### 各 Agent 接入方式
+
+**豆包工作**：将项目目录放入 skill 根目录，系统自动识别 `SKILL.md`。
+
+**Claude Code / Cursor / Copilot**：将项目克隆到任意目录，Agent 会自动读取 `AGENTS.md` 获取技能描述和命令。
+
+**OpenAI Codex CLI / 其他 Agent**：读取 `skill.json` 获取脚本清单，直接调用 `scripts/*.ps1`。
+
+**手动使用**：按下方"快速开始"逐步运行脚本。
+
 ## 项目结构
 
 ```
 workbuddy-dual-instance-fix/
+├── SKILL.md                  # 豆包工作 Skill 入口
+├── AGENTS.md                 # 通用 Agent 技能描述（Claude/Cursor/Copilot/Codex）
+├── skill.json                # 结构化技能元数据（机器可读）
 ├── README.md                 # 本文件（项目总览）
 ├── LICENSE                   # MIT 许可证
 ├── .gitignore
