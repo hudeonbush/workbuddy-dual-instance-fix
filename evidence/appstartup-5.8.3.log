@@ -1,0 +1,16 @@
+# 5.8.3 启动日志 - 版本确认
+
+# 来源: ~/.workbuddy/logs/AppStartup.log
+# 用途: 确认部署的版本为 5.8.3 (build db0e9b51)
+
+2026-10-17T11:17:36.443+08:00 [DocumentSelectionHook] appName=WorkBuddy appVersion=5.8.3 build=db0e9b51b7fa0b383f41f5b0b83dd442c8557918 platform=win32 arch=x64 electron=37.10.3 node=22.21.1
+2026-10-17T16:26:43.344+08:00 [DocumentSelectionHook] appName=WorkBuddy appVersion=5.8.3 build=db0e9b51b7fa0b383f41f5b0b83dd442c8557918 platform=win32 arch=x64 electron=37.10.3 node=22.21.1
+2026-10-17T16:26:43.345+08:00 [DocumentSelectionHook] appName=WorkBuddy appVersion=5.8.3 build=db0e9b51b7fa0b383f41f5b0b83dd442c8557918 platform=win32 arch=x64 electron=37.10.3 node=22.21.1
+2026-10-17T16:26:44.279+08:00 [DocumentSelectionHook] appName=WorkBuddy appVersion=5.8.3 build=db0e9b51b7fa0b383f41f5b0b83dd442c8557918 platform=win32 arch=x64 electron=37.10.3 node=22.21.1
+2026-10-17T16:26:44.279+08:00 [DocumentSelectionHook] appName=WorkBuddy appVersion=5.8.3 build=db0e9b51b7fa0b383f41f5b0b83dd442c8557918 platform=win32 arch=x64 electron=37.10.3 node=22.21.1
+
+# 关键字段:
+# appVersion=5.8.3  → 版本号正确
+# build=db0e9b51... → 与安装包文件名中的 build 哈希一致
+# electron=37.10.3  → Electron 运行时版本
+# node=22.21.1      → Node.js 版本

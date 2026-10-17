@@ -1,0 +1,33 @@
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 临时文件
+*.tmp
+*.log
+!evidence/*.log
+!evidence/*.txt
+
+# 安装包（不提交二进制）
+*.exe
+*.msi
+*.zip
+*.tar
+*.gz
+
+# 注册表备份（含用户信息，不提交）
+backup/*.reg
+
+# 环境变量
+.env
+.env.local
+
+# 操作系统
+$RECYCLE.BIN/

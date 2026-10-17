@@ -1,0 +1,19 @@
+{
+  "_comment": "官方更新 API 响应示例 - GET https://copilot.tencent.com/v2/update?platform=workbuddy-win32-x64-user&version=5.3.14&x-user-id=<uuid>",
+  "version": "5.8.3.41334564",
+  "url": "https://download.codebuddy.cn/workbuddy/saas/win32-x64-user/WorkBuddy-win32-x64-user-5.8.3.41334564-db0e9b51.exe",
+  "productVersion": "5.8.3.41334564",
+  "sha256hash": "824de10f3196c501004f540eb84ee881292fef2f5df9fb3fc48af9ea5366c03c",
+  "timestamp": 1792057764,
+  "hash": "",
+  "name": "",
+  "supportsFastUpdate": false,
+  "_notes": {
+    "platform_user": "workbuddy-win32-x64-user → 返回可下载的 user 格式包（HTTP 200, 441MB）",
+    "platform_archive": "workbuddy-win32-x64-archive → 返回 URL 但下载 404 NoSuchKey",
+    "platform_plain": "workbuddy-win32-x64 → 400 Bad Request",
+    "file_size": "441,094,104 字节",
+    "file_count_after_extract": "7258 个文件",
+    "app_asar_size": "96,544,269 字节 (~92MB)"
+  }
+}

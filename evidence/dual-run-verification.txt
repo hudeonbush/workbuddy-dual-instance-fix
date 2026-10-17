@@ -1,0 +1,33 @@
+# 双开验证结果
+
+# 时间: 2026-10-17 16:26 (UTC+8)
+# 环境: Windows 11
+
+===== 进程状态 =====
+国内版 WorkBuddy 进程数: 6
+国际版 WorkBuddyAI 进程数: 9
+
+===== 版本确认 =====
+# ~/.workbuddy/logs/AppStartup.log
+2026-10-17T16:26:43.344+08:00 [DocumentSelectionHook] appName=WorkBuddy appVersion=5.8.3 build=db0e9b51b7fa0b383f41f5b0b83dd442c8557918 platform=win32 arch=x64 electron=37.10.3 node=22.21.1
+
+# ~/.workbuddy-ai/logs/AppStartup.log
+appName=WorkBuddyAI appVersion=5.8.4 build=73952edb...
+
+===== 渲染健康 =====
+国内版: 无 React 崩溃, 有渲染心跳 ✅
+国际版: 无 React 崩溃, 有渲染心跳 ✅
+
+===== 数据目录隔离 =====
+国内版: ~/.workbuddy/  → 日志持续写入
+国际版: ~/.workbuddy-ai/ → 日志持续写入
+
+===== 安装目录 =====
+国内版: %LOCALAPPDATA%\Programs\WorkBuddy\  → 7258 文件, app.asar 96,544,269 字节
+国际版: %LOCALAPPDATA%\Programs\WorkBuddyAI\ → 独立部署
+
+===== 结论 =====
+✅ 双开成功: 国内版 5.8.3 与国际版 5.8.4 同时运行
+✅ 界面正常: 两个版本均无白屏
+✅ 数据隔离: 各自独立数据目录
+✅ 版本正确: 国内版 5.8.3 (build db0e9b51), 国际版 5.8.4 (build 73952edb)

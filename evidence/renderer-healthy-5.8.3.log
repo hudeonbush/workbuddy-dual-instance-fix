@@ -1,0 +1,13 @@
+# 5.8.3 正常运行 - renderer 心跳日志
+
+# 来源: ~/.workbuddy/logs/renderer.log
+# 特征: 持续的 [perf] [heartbeat] 和 [render-diag] 日志，说明渲染循环正常
+
+{"timestamp":"2026-10-17T08:28:20.234Z","level":"info","scope":"renderer","message":["[perf] [heartbeat] appState {\"conversationsLength\":0,\"teamRuntimeKeys\":0,\"emptyTRSCacheSize\":0,\"historyLength\":0}"]}
+{"timestamp":"2026-10-17T08:28:22.258Z","level":"info","scope":"renderer","message":["[perf] [tick] elapsed=5996ms ipc.push.wb-event.total=1 ipc.push.wb-event.extension.resource-sample=1"]}
+{"timestamp":"2026-10-17T08:28:25.288Z","level":"info","scope":"renderer","message":["[perf] [heartbeat] appState {\"conversationsLength\":0,\"teamRuntimeKeys\":0,\"emptyTRSCacheSize\":0}"]}
+{"timestamp":"2026-10-17T08:28:30.339Z","level":"info","scope":"renderer","message":["[perf] [heartbeat] appState {\"conversationsLength\":0}"]}
+{"timestamp":"2026-10-17T08:28:31.339Z","level":"info","scope":"renderer","message":["[render-diag] idle: InputContainer(11532ms) StatusChips(11532ms) VoiceButton(11532ms) InputBoxScope(11490ms)"]}
+{"timestamp":"2026-10-17T08:28:31.340Z","level":"info","scope":"renderer","message":["[render-diag] idle: hotpath:cloudServiceQuotaTrigger(10001ms) hotpath:sessionSetConnectors(10001ms)"]}
+
+# 对比 5.3.14 白屏时: renderer.log 中无 heartbeat，Crash-Log 中有 React error #31

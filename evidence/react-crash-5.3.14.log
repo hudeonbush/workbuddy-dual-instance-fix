@@ -1,0 +1,15 @@
+# 5.3.14 旧版白屏 - React 崩溃堆栈
+
+# 来源: ~/.workbuddy-clean/logs/Crash-Log/crash-report-main-*.json
+# 触发: 用 WORKBUDDY_CONFIG_DIR 指定干净数据目录启动 5.3.14
+# 结论: 非数据不兼容，是版本-服务端协议不兼容
+
+{
+  "stack": "Error: Minified React error #31; visit https://reactjs.org/docs/error-decoder.html?invariant=31&args[]=object%20with%20keys%20%7B%24wbEncrypted%2C%20envelope%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Mg (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:2665:9)\n    at J (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:2892:5)\n    at Xi (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:3924:26)\n    at Vk (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:6326:211)\n    at Uk (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:5952:11)\n    at Tk (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:5946:23)\n    at Ik (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:5931:5)\n    at Nk (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:5663:7)\n    at Gk (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:5601:50)\n    at J (file:///C:/Users/<user>/AppData/Local/Programs/WorkBuddy/resources/app.asar/renderer/assets/react-dom-IYSM6kDg.js:86:14)"
+}
+
+# React Error #31 完整含义:
+# Objects are not valid as a React child (found: object with keys {$wbEncrypted, envelope})
+#
+# 根因: 5.3.14 前端无法解码 5.8.x 服务端返回的加密消息信封 {$wbEncrypted, envelope}，
+#       将加密对象直接当作 React child 渲染 → 崩溃 → 白屏
