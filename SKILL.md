@@ -1,4 +1,4 @@
----
+﻿---
 name: workbuddy-dual-instance-fix
 description: 用户遇到 WorkBuddy（国内版）与 WorkBuddy AI（国际版）无法同时运行、国内版白屏、安装后界面空白、快捷方式指向错误版本等问题时使用。提供环境诊断、获取官方最新安装包、独立目录部署、双开验证的完整修复流程。
 ---

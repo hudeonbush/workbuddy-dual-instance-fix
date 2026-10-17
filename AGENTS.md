@@ -1,4 +1,4 @@
-# AGENTS.md - WorkBuddy Dual-Instance Fix
+﻿# AGENTS.md - WorkBuddy Dual-Instance Fix
 
 > 通用 Agent 技能描述文件，兼容 Claude Code、Cursor、GitHub Copilot、OpenAI Codex、豆包工作等主流 AI Agent。
 
