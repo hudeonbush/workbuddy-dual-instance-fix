@@ -72,6 +72,8 @@ workbuddy-dual-instance-fix/
 ├── README.md                 # 本文件（项目总览）
 ├── LICENSE                   # MIT 许可证
 ├── .gitignore
+├── assets/
+│   └── wechat-qr.png         # 微信二维码
 ├── docs/
 │   ├── 01-background.md      # 问题背景与现象
 │   ├── 02-root-cause.md      # 根因深度分析
@@ -144,6 +146,9 @@ GET https://copilot.tencent.com/v2/update?platform=workbuddy-win32-x64-user&vers
 - **提交 Issue**：[GitHub Issues](https://github.com/hudeonbush/workbuddy-dual-instance-fix/issues) — 报告 bug、请求新功能
 - **参与讨论**：[GitHub Discussions](https://github.com/hudeonbush/workbuddy-dual-instance-fix/discussions) — 分享你的修复经验、提问交流
 - **查看文档**：[docs/](docs/) — 完整的根因分析和修复步骤
+- **微信交流**：扫码添加作者微信，备注「WorkBuddy」
+
+  <img src="assets/wechat-qr.png" width="200" alt="微信二维码">
 
 提交 Issue 时请附上 `scripts\diagnose.ps1` 的输出，方便快速定位问题。
 
